@@ -9,13 +9,14 @@
             android:layout_height="wrap_content"
             android:text="Vendor"
             android:layout_margin="4dp"
+            android:id="@+id/vendor"
             />
-
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Supplier"
             android:layout_margin="4dp"
+            android:id="@+id/supplier"
             />
 </LinearLayout>
 
