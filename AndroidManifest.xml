@@ -4,6 +4,11 @@
           android:versionCode="1"
           android:versionName="1.0">
     <uses-sdk android:minSdkVersion="8"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <user-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-feature android:name="android.hardware.location" android:required="true"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
     <application android:label="@string/app_name">
         <activity android:name=".HomeActivity"
                   android:label="@string/app_name">
@@ -15,5 +20,6 @@
         <activity android:name=".VendorDashboard"/>
         <activity android:name=".SupplierDashboard"/>
         <activity android:name=".AddProductActivity"/>
+        <activity android:name=".LocationHelper"/>
     </application>
 </manifest> 
