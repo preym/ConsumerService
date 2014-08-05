@@ -4,26 +4,36 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
-public class HomeActivity extends Activity implements View.OnClickListener {
+public class HomeActivity extends Activity {
+    Button vendor;
+    Button supplier;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        vendor = (Button) findViewById(R.id.vendor);
+        supplier = (Button) findViewById(R.id.supplier);
+        applyActions();
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.vendor:
+    private void applyActions() {
+        vendor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 callVendorDashboard();
-                break;
-            case R.id.supplier:
+            }
+        });
+        supplier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 callSupplierDashboard();
-                break;
-        }
+            }
+        });
     }
+
 
     private void callSupplierDashboard() {
         Intent intent = new Intent(this, SupplierDashboard.class);
@@ -31,7 +41,7 @@ public class HomeActivity extends Activity implements View.OnClickListener {
     }
 
     private void callVendorDashboard() {
-        Intent intent = new Intent(this, SupplierDashboard.class);
+        Intent intent = new Intent(this, VendorDashboard.class);
         startActivity(intent);
     }
 }

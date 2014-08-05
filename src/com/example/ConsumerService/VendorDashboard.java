@@ -42,8 +42,6 @@ public class VendorDashboard extends Activity {
     private void callAddProductActivity() {
         Intent intent = new Intent(this, AddProductActivity.class);
         startActivity(intent);
-
-
     }
 
 
