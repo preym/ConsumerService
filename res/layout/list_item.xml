@@ -3,14 +3,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-        >
-
-    <ListView
+              android:layout_height="48dp">
+    <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/listview"
-            android:padding="8dp"/>
-
+            android:id="@+id/item"
+            android:textSize="24sp"/>
 
 </LinearLayout>

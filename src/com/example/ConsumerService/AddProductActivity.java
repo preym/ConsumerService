@@ -1,6 +1,7 @@
 package com.example.ConsumerService;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created with IntelliJ IDEA.
@@ -37,17 +39,23 @@ public class AddProductActivity extends Activity {
                 saveProduct();
             }
         });
-
     }
 
     private void saveProduct() {
         String input = productName.getText().toString();
-
         if (input.equals("")) {
             productName.setError("Please Enter Product Name");
         } else {
-            //TODO: SaveProduct
-            item.setVisible(true);
+            SharedPreferences preferences = getSharedPreferences("products", 0);
+            String exist = preferences.getString(input, null);
+            if (exist == null || exist.equals("")) {
+                preferences.edit().putString(input, input).commit();
+                Toast.makeText(this, "Product Saved Successfully", Toast.LENGTH_SHORT).show();
+                productName.setText("");
+                this.finish();
+            } else {
+                productName.setError("Product Already Exist");
+            }
         }
     }
 
@@ -64,7 +72,6 @@ public class AddProductActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
         switch (item.getItemId()) {
             case R.id.add_product:
                 addSubItem();
