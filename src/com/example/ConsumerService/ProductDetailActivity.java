@@ -26,6 +26,11 @@ public class ProductDetailActivity extends Activity {
         setContentView(R.layout.product_details);
         getWidgets();
         getExixtingList();
+        applyAdapter();
+    }
+
+    private void applyAdapter() {
+        listView.setAdapter(new MyAdaptet(existingList, this));
     }
 
     private void getExixtingList() {
@@ -36,7 +41,6 @@ public class ProductDetailActivity extends Activity {
         } else {
             existingList = new Gson().fromJson(existingJson, List.class);
         }
-
     }
 
     private void getWidgets() {
@@ -94,6 +98,7 @@ public class ProductDetailActivity extends Activity {
         }
         existingList.add(inputProductName);
         preferences.edit().putString(productName, new Gson().toJson(existingList)).commit();
+        applyAdapter();
     }
 
 
