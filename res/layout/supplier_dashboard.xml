@@ -5,4 +5,64 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_search_near"
+                android:text="Near by"
+                android:layout_weight="2"
+                android:background="@drawable/custom_button"
+                android:layout_margin="4dp"
+                />
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_search_location"
+                android:text="By Location"
+                android:layout_weight="2"
+                android:background="@drawable/custom_button"
+                android:layout_margin="4dp"
+                />
+    </LinearLayout>
+
+    <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vendor_list"
+            android:layout_weight="2"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:gravity="bottom"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Location"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="2"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/geo_location_text"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="2"/>
+
+
+    </LinearLayout>
 </LinearLayout>
