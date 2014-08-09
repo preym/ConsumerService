@@ -13,6 +13,6 @@ import android.os.Bundle;
 public class SupplierDashboard extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.supplier_signup);
+        setContentView(R.layout.supplier_dashboard);
     }
 }

@@ -26,5 +26,7 @@
         <activity android:name=".AddProductActivity"/>
         <activity android:name=".LocationHelper"/>
         <activity android:name=".ProductDetailActivity"/>
+        <activity android:name=".SupplierSignup"
+                  android:noHistory="true"/>
     </application>
 </manifest> 
