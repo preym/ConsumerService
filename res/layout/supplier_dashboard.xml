@@ -35,7 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/vendor_list"
-            android:layout_weight="2"/>
+            android:layout_weight="2"
+            />
 
     <LinearLayout
             android:orientation="horizontal"

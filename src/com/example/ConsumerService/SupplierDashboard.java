@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import com.example.model.Vendor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,8 +29,20 @@ public class SupplierDashboard extends Activity implements View.OnClickListener 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.supplier_dashboard);
+        String[] products = {"TV", "LAPTOP", "UPS"};
+
+        Vendor vendor1 = new Vendor("Prem", "9885080234", "Hyderabad", "17.511829800000000000",
+                "78.384622600000060000", products);
+
+        Vendor vendor2 = new Vendor("Sree", "9885080234", "Mumbai", "17.453461300000000000",
+                "78.438704499999970000", products);
+
+        List<Vendor> vendors = new ArrayList<Vendor>();
+        vendors.add(vendor1);
+        vendors.add(vendor2);
         getWidgets();
 
+        vendorListView.setAdapter(new SupplierListAdapter(this, vendors));
     }
 
     private void getWidgets() {

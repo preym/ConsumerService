@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class ProductListAdaptet extends BaseAdapter {
+public class ProductListAdapter extends BaseAdapter {
     List keySet;
     Context context;
 
-    ProductListAdaptet(List keySet, Context context) {
+    ProductListAdapter(List keySet, Context context) {
         this.keySet = keySet;
         this.context = context;
     }

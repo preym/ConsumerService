@@ -39,7 +39,7 @@ public class VendorDashboard extends Activity {
         SharedPreferences preferences = getSharedPreferences("products", 0);
         Map keys = preferences.getAll();
         Set keySet = keys.keySet();
-        listView.setAdapter(new ProductListAdaptet(new ArrayList(keySet), this));
+        listView.setAdapter(new ProductListAdapter(new ArrayList(keySet), this));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

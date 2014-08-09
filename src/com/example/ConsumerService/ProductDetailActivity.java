@@ -31,7 +31,7 @@ public class ProductDetailActivity extends Activity {
     }
 
     private void applyAdapter() {
-        listView.setAdapter(new ProductListAdaptet(existingList, this));
+        listView.setAdapter(new ProductListAdapter(existingList, this));
     }
 
     private void getExixtingList() {
