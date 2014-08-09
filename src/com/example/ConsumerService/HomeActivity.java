@@ -14,7 +14,7 @@ public class HomeActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.home_layout);
         vendor = (Button) findViewById(R.id.vendor);
         supplier = (Button) findViewById(R.id.supplier);
         applyActions();
