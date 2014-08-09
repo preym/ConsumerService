@@ -1,6 +1,8 @@
 package com.example.ConsumerService;
 
 import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.model.Vendor;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -21,11 +24,13 @@ import java.util.List;
 public class SupplierListAdapter extends BaseAdapter {
     Context context;
     List<Vendor> vendors;
+    Location currentLocation;
 
 
-    public SupplierListAdapter(Context context, List<Vendor> vendors) {
+    public SupplierListAdapter(Context context, List<Vendor> vendors, Location location) {
         this.context = context;
         this.vendors = vendors;
+        this.currentLocation = location;
     }
 
     @Override
@@ -49,18 +54,22 @@ public class SupplierListAdapter extends BaseAdapter {
                 Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.vendor_details_item, null);
         Vendor vendor = vendors.get(position);
-
         TextView name = (TextView) view.findViewById(R.id.vendor_name);
         TextView products = (TextView) view.findViewById(R.id.vendor_products);
         TextView distance = (TextView) view.findViewById(R.id.vendor_distance);
         ImageView image = (ImageView) view.findViewById(R.id.vendor_image);
-
         name.setText(vendor.getVendorName());
         String productString = "";
         for (int i = 0; i < vendor.getVendorProducts().length; i++) {
             productString = productString + ", " + vendor.getVendorProducts()[i];
         }
         products.setText("Type of Products: " + productString);
+        Location targetLocation = new Location(LocationManager.GPS_PROVIDER);
+        targetLocation.setLatitude(Double.parseDouble(vendor.getVendorLat()));
+        targetLocation.setLongitude(Double.parseDouble(vendor.getVendorLong()));
+        float km = targetLocation.distanceTo(currentLocation) / 1000;
+        distance.setText("Distance from Supplier " + new DecimalFormat("#.##").format(km) + " kms");
+
         return view;
     }
 }
