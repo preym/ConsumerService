@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/supplier_signup"
+            android:layout_margin="16dp"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            />
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_margin="8dp">
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup_name"
+                android:hint="Name"
+                android:layout_weight="1"
+                android:background="@drawable/edit_text_border"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup_email"
+                android:hint="Email"
+                android:background="@drawable/edit_text_border"
+                android:layout_weight="1"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup_pwd"
+                android:hint="Password"
+                android:background="@drawable/edit_text_border"
+                android:layout_weight="1"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup_retype"
+                android:hint="Retype Password"
+                android:background="@drawable/edit_text_border"
+                android:layout_weight="1"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup_mobile"
+                android:hint="Mobile"
+                android:background="@drawable/edit_text_border"
+                android:layout_weight="1"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup_otp"
+                android:hint="OTP"
+                android:background="@drawable/edit_text_border"
+                android:layout_weight="1"/>
+
+        <Button
+                android:layout_width="108dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/signup_register"
+                android:text="Register"
+                android:layout_gravity="center"
+                android:background="@android:color/darker_gray"
+                android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
