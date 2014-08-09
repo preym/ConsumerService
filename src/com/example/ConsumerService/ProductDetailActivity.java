@@ -78,7 +78,9 @@ public class ProductDetailActivity extends Activity {
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
+        lp.setMargins(4, 4, 4, 4);
         input.setLayoutParams(lp);
+        input.setBackground(getResources().getDrawable(R.drawable.edit_text_border));
         alertDialog.setView(input);
         alertDialog.setPositiveButton("YES",
                 new DialogInterface.OnClickListener() {
