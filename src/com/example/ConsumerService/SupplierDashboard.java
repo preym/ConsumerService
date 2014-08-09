@@ -50,15 +50,15 @@ public class SupplierDashboard extends Activity implements View.OnClickListener,
         String[] products = {"TV", "LAPTOP", "UPS"};
         Vendor vendor1 = new Vendor("Prem", "9885080234", "Kukatpalli", "17.511829800000000000",
                 "78.384622600000060000", products);
-        Vendor vendor2 = new Vendor("Sree", "9885080234", "Jublihills", "17.453461300000000000",
+        Vendor vendor2 = new Vendor("Sree", "8187835811", "Jublihills", "17.453461300000000000",
                 "78.438704499999970000", products);
-        Vendor vendor3 = new Vendor("Ram", "9885080234", "ameerpet", "17.434801700000000000",
+        Vendor vendor3 = new Vendor("Ram", "9908671431", "ameerpet", "17.434801700000000000",
                 "78.448010999999950000", products);
 
-        Vendor vendor4 = new Vendor("Ram", "9885080234", "secundrabad", "17.439929500000000000",
+        Vendor vendor4 = new Vendor("Ram", "9849112148", "secundrabad", "17.439929500000000000",
                 "78.498274100000000000", products);
 
-        Vendor vendor5 = new Vendor("Krishna", "9885080234", "miyapur", "17.418892700000000000",
+        Vendor vendor5 = new Vendor("Krishna", "9948755155", "miyapur", "17.418892700000000000",
                 "78.580279499999960000", products);
         vendors.add(vendor1);
         vendors.add(vendor2);
@@ -109,8 +109,6 @@ public class SupplierDashboard extends Activity implements View.OnClickListener,
             locationInfo.setText(address.getAddressLine(0) + "\n" + address.getLocality()
                     + "\n" + address.getSubAdminArea() + "\n" +
                     address.getAdminArea() + "\n" + address.getPostalCode());
-
-
         }
     }
 

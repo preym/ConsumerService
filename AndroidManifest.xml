@@ -28,5 +28,6 @@
         <activity android:name=".ProductDetailActivity"/>
         <activity android:name=".SupplierSignup"
                   android:noHistory="true"/>
+        <activity android:name=".VendorDetailsActivity"/>
     </application>
 </manifest> 

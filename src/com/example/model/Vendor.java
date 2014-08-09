@@ -1,5 +1,7 @@
 package com.example.model;
 
+import android.location.Location;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ehc
@@ -14,6 +16,16 @@ public class Vendor {
     public String vendorLat;
     public String vendorLong;
     public String[] vendorProducts;
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Location location;
 
 
     public Vendor(String name, String mobile, String location, String lat, String lng, String[] products) {

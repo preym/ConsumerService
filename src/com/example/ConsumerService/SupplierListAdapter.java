@@ -1,6 +1,7 @@
 package com.example.ConsumerService;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationManager;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.model.Vendor;
+import com.google.gson.Gson;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -53,7 +55,7 @@ public class SupplierListAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.vendor_details_item, null);
-        Vendor vendor = vendors.get(position);
+        final Vendor vendor = vendors.get(position);
         TextView name = (TextView) view.findViewById(R.id.vendor_name);
         TextView products = (TextView) view.findViewById(R.id.vendor_products);
         TextView distance = (TextView) view.findViewById(R.id.vendor_distance);
@@ -67,8 +69,18 @@ public class SupplierListAdapter extends BaseAdapter {
         Location targetLocation = new Location(LocationManager.GPS_PROVIDER);
         targetLocation.setLatitude(Double.parseDouble(vendor.getVendorLat()));
         targetLocation.setLongitude(Double.parseDouble(vendor.getVendorLong()));
+        vendor.setLocation(targetLocation);
         float km = targetLocation.distanceTo(currentLocation) / 1000;
         distance.setText("Distance from Supplier " + new DecimalFormat("#.##").format(km) + " kms");
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, VendorDetailsActivity.class);
+                intent.putExtra("vendor", new Gson().toJson(vendor));
+                context.startActivity(intent);
+            }
+        });
 
         return view;
     }
