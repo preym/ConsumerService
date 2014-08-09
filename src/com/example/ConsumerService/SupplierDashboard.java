@@ -24,25 +24,36 @@ public class SupplierDashboard extends Activity implements View.OnClickListener 
     private Button locationByButton;
     private ListView vendorListView;
     private TextView locationInfo;
+    List<Vendor> vendors = new ArrayList<Vendor>();
 
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.supplier_dashboard);
+        getVendors();
+        getWidgets();
+        vendorListView.setAdapter(new SupplierListAdapter(this, vendors));
+    }
+
+    private void getVendors() {
         String[] products = {"TV", "LAPTOP", "UPS"};
-
-        Vendor vendor1 = new Vendor("Prem", "9885080234", "Hyderabad", "17.511829800000000000",
+        Vendor vendor1 = new Vendor("Prem", "9885080234", "Kukatpalli", "17.511829800000000000",
                 "78.384622600000060000", products);
-
-        Vendor vendor2 = new Vendor("Sree", "9885080234", "Mumbai", "17.453461300000000000",
+        Vendor vendor2 = new Vendor("Sree", "9885080234", "Jublihills", "17.453461300000000000",
                 "78.438704499999970000", products);
+        Vendor vendor3 = new Vendor("Ram", "9885080234", "ameerpet", "17.434801700000000000",
+                "78.448010999999950000", products);
 
-        List<Vendor> vendors = new ArrayList<Vendor>();
+        Vendor vendor4 = new Vendor("Ram", "9885080234", "secundrabad", "17.439929500000000000",
+                "78.498274100000000000", products);
+
+        Vendor vendor5 = new Vendor("Krishna", "9885080234", "miyapur", "17.418892700000000000",
+                "78.580279499999960000", products);
         vendors.add(vendor1);
         vendors.add(vendor2);
-        getWidgets();
-
-        vendorListView.setAdapter(new SupplierListAdapter(this, vendors));
+        vendors.add(vendor3);
+        vendors.add(vendor4);
+        vendors.add(vendor5);
     }
 
     private void getWidgets() {

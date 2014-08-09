@@ -3,7 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:layout_margin="4dp">
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -15,24 +16,27 @@
                 android:orientation="vertical"
                 android:layout_gravity="left"
                 android:layout_weight="3"
-                android:layout_margin="4dp">
+                >
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Vendor Name"
-                    android:id="@+id/vendor_name"/>
+                    android:id="@+id/vendor_name"
+                    android:layout_margin="4dp"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
                     android:text="Type Of Products: X, X, X"
                     android:id="@+id/vendor_products"/>
         </LinearLayout>
 
         <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher"
-                android:layout_gravity="right"
+                android:layout_height="fill_parent"
+                android:src="@drawable/accounts"
                 android:id="@+id/vendor_image"
                 android:layout_weight="1"/>
     </LinearLayout>
@@ -41,6 +45,7 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:text="Distance from Supplier "
             android:id="@+id/vendor_distance"/>
 
