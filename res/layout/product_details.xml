@@ -8,7 +8,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/product_title"
-            android:textSize="18dp"
+            android:textSize="24dp"
+            android:textStyle="bold"
             android:gravity="center"
             android:layout_margin="4dp"/>
 
@@ -18,11 +19,12 @@
             android:id="@+id/sub_products"
             android:layout_margin="4dp"/>
 
-    <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:id="@+id/button_add_sub_product"
-            android:text="Add"/>
+    <!--<Button-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_margin="4dp"-->
+    <!--android:id="@+id/button_add_sub_product"-->
+    <!--android:text="Add"-->
+    <!--android:background="@drawable/custom_button"/>-->
 
 </LinearLayout>

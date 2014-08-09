@@ -5,7 +5,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.*;
 import com.google.gson.Gson;
 
@@ -15,7 +17,6 @@ import java.util.List;
 public class ProductDetailActivity extends Activity {
     TextView title;
     ListView listView;
-    Button addButton;
     String productName;
     String inputProductName;
     List<String> existingList;
@@ -46,17 +47,28 @@ public class ProductDetailActivity extends Activity {
     private void getWidgets() {
         title = (TextView) findViewById(R.id.product_title);
         listView = (ListView) findViewById(R.id.sub_products);
-        addButton = (Button) findViewById(R.id.button_add_sub_product);
         productName = getIntent().getStringExtra("product");
         title.setText(productName);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addSubProduct();
-            }
-        });
-
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.vendor_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.add_product:
+                addSubProduct();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
     private void addSubProduct() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);

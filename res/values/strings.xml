@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ConsumerService</string>
-    <string name="supplier_signup">Please Register with your email id and mobile number</string>
+    <string name="supplier_signup">
+        Please Register with your email id and mobile number
+    </string>
 </resources>
